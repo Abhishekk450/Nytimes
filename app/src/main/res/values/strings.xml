@@ -3,4 +3,5 @@
     <string name="api_key">Lzrd3gR0rzxH69U1PDDVMcxGapJd29sx</string>
     <string name="see_full_article_click_below_link">See full article click below link:</string>
     <string name="no_internet">No internet connection!</string>
+    <string name="no_record_found">No Record Found</string>
 </resources>

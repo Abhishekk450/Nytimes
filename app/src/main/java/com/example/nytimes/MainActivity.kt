@@ -37,15 +37,20 @@ class MainActivity : AppCompatActivity() {
 
         call.enqueue(object : Callback<NewsList?> {
             override fun onFailure(call: Call<NewsList?>, t: Throwable) {
-             Utils.showError(this@MainActivity,constraint_main,null )
+                    Utils.showError(this@MainActivity,constraint_main,null )
+
             }
 
             override fun onResponse(
                 call: Call<NewsList?>,
                 response: Response<NewsList?>
-            ) {
+            ) { if(response!=null) {
                 hideProgress()
                 generateNewsList(response?.body()?.results as ArrayList<Result>)
+            } else {
+                text_no_record_found.visibility = View.VISIBLE
+                hideProgress()
+            }
             }
         })
     }
